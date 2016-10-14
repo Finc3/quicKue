@@ -25,17 +25,16 @@
     },
     "TITLE": {
       "description": "Title shown in the UI",
-      "value": "quicKue"
+      "value": "quicKue",
+      "required": false
     }
   },
-  "formation": [
-    {
-      "web": {
-        "quantity": 1,
-        "size": "Standard-1x"
-      }
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1x"
     }
-  ],
+  },
   "image": "heroku/nodejs",
   "addons": [
     {
