@@ -1,0 +1,23 @@
+{
+  "name": "quickue",
+  "version": "1.0.0",
+  "description": "Set up Automattic/kue on Heroku with ease",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Finc3/quicKue.git"
+  },
+  "author": "Daniel Waardal <daniel@massforstroel.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Finc3/quicKue/issues"
+  },
+  "homepage": "https://github.com/Finc3/quicKue#readme",
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "kue": "^0.11.1"
+  }
+}
