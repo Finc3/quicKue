@@ -1,0 +1,60 @@
+{
+  "name": "quicKue",
+  "description": "Set up Automattic/kue on Heroku with ease",
+  "keywords": [
+    "queuing",
+    "kue",
+    "queue",
+    "scheduler",
+    "dashboard",
+    "node",
+    "redis"
+  ],
+  "website": "http://www.finc3.de/",
+  "repository": "https://github.com/Finc3/quicKue",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Ic_cloud_queue_48px.svg",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  },
+  "env": {
+    "USER_NAME": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "value": "admin"
+    },
+    "PASSWORD": {
+      "description": "The number of processes to run.",
+      "generator": "secret"
+    },
+    "TITLE": {
+      "description": "Title shown in the UI",
+      "value": "quicKue"
+    }
+  },
+  "formation": [
+    {
+      "web": {
+        "quantity": 1,
+        "size": "Standard-1x"
+      }
+    }
+  ],
+  "image": "heroku/nodejs",
+  "addons": [
+    {
+      "plan": "heroku-redis:hobby-dev",
+      "as": "REDIS",
+      "options": {
+        "maxmemory-policy": "noeviction"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-redis.git"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
