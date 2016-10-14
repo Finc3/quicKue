@@ -14,16 +14,13 @@
   "repository": "https://github.com/Finc3/quicKue",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Ic_cloud_queue_48px.svg",
   "success_url": "/",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
-  },
   "env": {
     "USER_NAME": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
+      "description": "The username for the web interface.",
       "value": "admin"
     },
     "PASSWORD": {
-      "description": "The number of processes to run.",
+      "description": "The password for the web interface.",
       "generator": "secret"
     },
     "TITLE": {
