@@ -2,7 +2,11 @@
 var kue = require('kue');
 var basicAuth = require('basic-auth-connect');
 var queue = require('./queue');
-kue.app.use(basicAuth(process.env.USER_NAME or 'admin', process.env.PASSWORD));
-kue.app.set('title', process.env.TITLE or 'quicKue');
+var express = require('express');
+var app = express();
+app.use(basicAuth(process.env.USER_NAME || 'admin', process.env.PASSWORD));
+kue.app.set('title', process.env.TITLE || 'quicKue');
+app.use(kue.app);
+app.listen(process.env.PORT || 3000);
 
-kue.app.listen(process.env.PORT or 3000);
+module.exports = app;

@@ -25,31 +25,27 @@
     },
     "TITLE": {
       "description": "Title shown in the UI",
-      "value": "quicKue"
+      "value": "quicKue",
+      "required": false
     }
   },
-  "formation": [
-    {
-      "web": {
-        "quantity": 1,
-        "size": "Standard-1x"
-      }
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
     }
-  ],
+  },
   "image": "heroku/nodejs",
   "addons": [
     {
-      "plan": "heroku-redis:hobby-dev",
-      "as": "REDIS",
-      "options": {
-        "maxmemory-policy": "noeviction"
-      }
+      "plan": "rediscloud:30",
+      "as": "REDIS"
+    },
+    {
+      "plan": "papertrail:choklad"
     }
   ],
   "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-redis.git"
-    },
     {
       "url": "heroku/nodejs"
     }
