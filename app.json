@@ -38,11 +38,12 @@
   "image": "heroku/nodejs",
   "addons": [
     {
-      "plan": "heroku-redis:hobby-dev",
-      "as": "REDIS",
-      "options": {
-        "maxmemory-policy": "noeviction"
+      "plan": "rediscloud:30",
+      "as": "REDIS"
       }
+    },
+    {
+      "plan": "papertrail:choklad"
     }
   ],
   "buildpacks": [
