@@ -40,7 +40,6 @@
     {
       "plan": "rediscloud:30",
       "as": "REDIS"
-      }
     },
     {
       "plan": "papertrail:choklad"
